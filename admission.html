@@ -8,8 +8,297 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="canonical" href="https://www.drfarhathashmi.online/">
     <meta name="description" content="Learn Quran online with qualified teachers. Tajweed, Nazra, Hifz and Tafsir courses available worldwide.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fefcf5;
+            color: #1e2a3a;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+        .bg-shape {
+            position: fixed;
+            z-index: -1;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+        }
+        .shape-1 {
+            width: 50vw;
+            height: 50vw;
+            background: #d4af7a;
+            top: -20vh;
+            right: -10vw;
+        }
+        .shape-2 {
+            width: 40vw;
+            height: 40vw;
+            background: #b9945c;
+            bottom: -10vh;
+            left: -15vw;
+        }
+        .navbar {
+            background: rgba(255, 252, 245, 0.96);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0e5d2;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2c5a2e, #b8860b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .logo p {
+            font-size: 0.75rem;
+            color: #8b6b3e;
+        }
+        .menu-icon {
+            font-size: 1.8rem;
+            cursor: pointer;
+            display: none;
+            color: #b8860b;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2c3e2f;
+            transition: 0.2s;
+        }
+        .nav-links a:hover {
+            color: #b8860b;
+        }
+        .float-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            z-index: 999;
+            text-decoration: none;
+        }
+        .form-card-glass {
+            background: white;
+            border-radius: 48px;
+            padding: 48px;
+            margin: 60px auto;
+            max-width: 950px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border: 1px solid #f2e5d4;
+        }
+        .card-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .card-header h2 {
+            font-size: 2rem;
+            color: #2c5a2e;
+        }
+        .card-header p {
+            color: #6b5a3e;
+            margin-top: 0.5rem;
+        }
+        .premium-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .form-row {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .form-group {
+            flex: 1;
+            position: relative;
+        }
+        .form-group label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            color: #2c3e2f;
+        }
+        .required {
+            color: #c9772e;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.85rem 1rem 0.85rem 2.5rem;
+            border: 1.5px solid #e8dfcf;
+            border-radius: 28px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            transition: 0.2s;
+            background: #fffef9;
+        }
+        .form-group textarea {
+            padding-left: 2.5rem;
+            border-radius: 24px;
+            resize: vertical;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #b8860b;
+            box-shadow: 0 0 0 3px rgba(184,134,11,0.1);
+        }
+        .input-icon {
+            position: absolute;
+            left: 15px;
+            bottom: 14px;
+            color: #c2a15b;
+            font-size: 1rem;
+        }
+        .textarea-icon {
+            bottom: 18px;
+        }
+        .btn-submit {
+            background: #b47c2e;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 40px;
+            border: none;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: 0.2s;
+            width: auto;
+            box-shadow: 0 4px 10px rgba(180,124,46,0.3);
+        }
+        .btn-submit:hover {
+            background: #9b671f;
+            transform: scale(1.02);
+        }
+        .form-footer {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .form-note {
+            font-size: 0.75rem;
+            color: #8b7a60;
+            margin-top: 1rem;
+        }
+        .feedback-message {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border-radius: 40px;
+            text-align: center;
+            font-weight: 500;
+        }
+        footer {
+            background: #1f2a1b;
+            color: #e6dccf;
+            margin-top: 2rem;
+            padding: 2.5rem 0 1rem;
+            border-radius: 32px 32px 0 0;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .footer-logo h3 {
+            font-size: 1.5rem;
+        }
+        .footer-links ul {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+        .footer-links a, .footer-contact a {
+            color: #ddcdb2;
+            text-decoration: none;
+        }
+        .social-icons a {
+            color: #f3e5c9;
+            margin-right: 1rem;
+            font-size: 1.4rem;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            border-top: 1px solid #3b4635;
+            padding-top: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #fffbf0;
+                padding: 1.5rem;
+                border-radius: 24px;
+                margin-top: 1rem;
+                gap: 1rem;
+                text-align: center;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-container {
+                flex-wrap: wrap;
+            }
+            .form-card-glass {
+                padding: 28px;
+                margin: 30px 20px;
+            }
+            .card-header h2 {
+                font-size: 1.6rem;
+            }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all 0.6s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
 
@@ -56,7 +345,7 @@
                 <div class="form-group">
                     <label>Parent / Guardian Name <span class="required">*</span></label>
                     <input type="text" id="parentName" placeholder="e.g., Muhammad Ahmed" required>
-                    <i class="fas fa-family input-icon"></i>
+                    <i class="fas fa-users input-icon"></i>
                 </div>
             </div>
             <div class="form-row">
@@ -87,7 +376,7 @@
                 </div>
                 <div class="form-group">
                     <label>Country <span class="required">*</span></label>
-                    <input type="text" id="country" placeholder="e.g.,UAE, USA, UK" required>
+                    <input type="text" id="country" placeholder="e.g., UAE, USA, UK" required>
                     <i class="fas fa-globe input-icon"></i>
                 </div>
             </div>
@@ -155,7 +444,70 @@
     </div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinksMenu = document.getElementById('navLinks');
+    if(menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinksMenu.classList.toggle('active');
+        });
+    }
+    
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.2 });
+    revealElements.forEach(el => observer.observe(el));
+    
+    // Close menu on resize
+    window.addEventListener('resize', () => {
+        if(window.innerWidth > 768 && navLinksMenu.classList.contains('active')) {
+            navLinksMenu.classList.remove('active');
+        }
+    });
+
+    // Form submission to WhatsApp
+    const form = document.getElementById('admissionForm');
+    const feedback = document.getElementById('formFeedback');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const studentName = document.getElementById('studentName').value.trim();
+        const parentName = document.getElementById('parentName').value.trim();
+        const whatsapp = document.getElementById('whatsapp').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const course = document.getElementById('course').value;
+        const country = document.getElementById('country').value.trim();
+        const preferredTime = document.getElementById('preferredTime').value.trim();
+        const message = document.getElementById('message').value.trim();
+        
+        if(!studentName || !parentName || !whatsapp || !email || !course || !country) {
+            feedback.innerHTML = '<span style="color:#c9772e;">⚠️ Please fill all required fields.</span>';
+            feedback.style.color = '#c9772e';
+            return;
+        }
+        
+        const text = `📚 *New Admission Request* 📚%0A%0A👤 Student: ${studentName}%0A👨‍👩‍👧 Parent: ${parentName}%0A📞 WhatsApp: ${whatsapp}%0A📧 Email: ${email}%0A🌍 Country: ${country}%0A📖 Course: ${course}%0A⏰ Preferred Time: ${preferredTime || 'Not specified'}%0A💬 Message: ${message || 'None'}%0A%0A🌟 *Free Trial Request* 🌟`;
+        
+        const whatsappUrl = `https://wa.me/971527876121?text=${text}`;
+        window.open(whatsappUrl, '_blank');
+        
+        feedback.innerHTML = '<span style="color:#2c7a2e;">✅ Redirecting to WhatsApp... Our team will contact you shortly!</span>';
+        feedback.style.color = '#2c7a2e';
+        
+        setTimeout(() => {
+            form.reset();
+        }, 2000);
+    });
+</script>
+
 <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
@@ -168,4 +520,4 @@
     })();
 </script>
 </body>
-  </html>
+</html>
