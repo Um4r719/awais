@@ -4,12 +4,258 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
     <title>Student Testimonials | Dr. Farhat Hashmi</title>
-    <link rel="canonical" href="https://www.drfarhathashmi.online/contact.html">
-  <meta name="description" content="Learn Quran online with qualified teachers. Tajweed, Nazra, Hifz and Tafsir courses available worldwide.">
+    <link rel="canonical" href="https://www.drfarhathashmi.online/testimonials.html">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="canonical" href="https://www.drfarhathashmi.online/">
+    <meta name="description" content="Learn Quran online with qualified teachers. Tajweed, Nazra, Hifz and Tafsir courses available worldwide.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fefcf5;
+            color: #1e2a3a;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+        .bg-shape {
+            position: fixed;
+            z-index: -1;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+        }
+        .shape-1 {
+            width: 50vw;
+            height: 50vw;
+            background: #d4af7a;
+            top: -20vh;
+            right: -10vw;
+        }
+        .shape-2 {
+            width: 40vw;
+            height: 40vw;
+            background: #b9945c;
+            bottom: -10vh;
+            left: -15vw;
+        }
+        .navbar {
+            background: rgba(255, 252, 245, 0.96);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0e5d2;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2c5a2e, #b8860b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .logo p {
+            font-size: 0.75rem;
+            color: #8b6b3e;
+        }
+        .menu-icon {
+            font-size: 1.8rem;
+            cursor: pointer;
+            display: none;
+            color: #b8860b;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2c3e2f;
+            transition: 0.2s;
+        }
+        .nav-links a:hover {
+            color: #b8860b;
+        }
+        .float-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            z-index: 999;
+            text-decoration: none;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 40px 0 30px;
+            color: #2d4827;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0 1rem;
+        }
+        .testimonial-card {
+            background: white;
+            border-radius: 32px;
+            padding: 2rem 1.8rem;
+            box-shadow: 0 12px 26px -8px rgba(0,0,0,0.05);
+            transition: 0.25s;
+            border: 1px solid #f2e5d4;
+            text-align: center;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+        }
+        .testimonial-card i.fa-quote-left {
+            font-size: 2rem;
+            color: #d4af7a;
+            margin-bottom: 1rem;
+            opacity: 0.6;
+        }
+        .testimonial-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #2c3e2f;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .student {
+            font-weight: 600;
+            color: #b8860b;
+            margin-top: 0.5rem;
+            font-style: normal;
+        }
+        .btn-primary {
+            background: #b47c2e;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+            display: inline-block;
+            border: none;
+            box-shadow: 0 4px 10px rgba(180,124,46,0.3);
+        }
+        .btn-primary:hover {
+            background: #9b671f;
+            transform: scale(1.02);
+        }
+        .text-center {
+            text-align: center;
+        }
+        footer {
+            background: #1f2a1b;
+            color: #e6dccf;
+            margin-top: 4rem;
+            padding: 2.5rem 0 1rem;
+            border-radius: 32px 32px 0 0;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .footer-logo h3 {
+            font-size: 1.5rem;
+        }
+        .footer-links ul {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+        .footer-links a, .footer-contact a {
+            color: #ddcdb2;
+            text-decoration: none;
+        }
+        .social-icons a {
+            color: #f3e5c9;
+            margin-right: 1rem;
+            font-size: 1.4rem;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            border-top: 1px solid #3b4635;
+            padding-top: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #fffbf0;
+                padding: 1.5rem;
+                border-radius: 24px;
+                margin-top: 1rem;
+                gap: 1rem;
+                text-align: center;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-container {
+                flex-wrap: wrap;
+            }
+            .section-title {
+                font-size: 1.8rem;
+                margin: 30px 0 20px;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all 0.6s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
 
@@ -47,32 +293,32 @@
             <div class="testimonial-card reveal">
                 <i class="fas fa-quote-left"></i>
                 <p>"My daughter's Tajweed improved dramatically within weeks. Highly recommended!"</p>
-                <div class="student">-- Ayesha Khan, Pakistan</div>
+                <div class="student">— Ayesha Khan, Pakistan</div>
             </div>
             <div class="testimonial-card reveal">
                 <i class="fas fa-quote-left"></i>
                 <p>"Flexible timing and one-on-one sessions helped me memorize 5 Juz in 6 months."</p>
-                <div class="student">-- Usman Riaz, UK</div>
+                <div class="student">— Usman Riaz, UK</div>
             </div>
             <div class="testimonial-card reveal">
                 <i class="fas fa-quote-left"></i>
                 <p>"The Tafsir classes are life-changing. I finally understand the Quran."</p>
-                <div class="student">-- Fatima El-Sayed, Canada</div>
+                <div class="student">— Fatima El-Sayed, Canada</div>
             </div>
             <div class="testimonial-card reveal">
                 <i class="fas fa-quote-left"></i>
                 <p>"Excellent teachers, very patient with kids. My son now loves Quran classes."</p>
-                <div class="student">-- Ahmed Malik, USA</div>
+                <div class="student">— Ahmed Malik, USA</div>
             </div>
             <div class="testimonial-card reveal">
                 <i class="fas fa-quote-left"></i>
                 <p>"I completed my Hifz in 2 years thanks to their structured program. Highly professional."</p>
-                <div class="student">-- Mariam Hassan, UAE</div>
+                <div class="student">— Mariam Hassan, UAE</div>
             </div>
             <div class="testimonial-card reveal">
                 <i class="fas fa-quote-left"></i>
                 <p>"The best online Quran academy. Teachers are very knowledgeable and kind."</p>
-                <div class="student">-- Bilal Ahmed, Australia</div>
+                <div class="student">— Bilal Ahmed, Australia</div>
             </div>
         </div>
         <div class="text-center" style="text-align: center; margin: 40px 0 60px;">
@@ -121,7 +367,35 @@
     </div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinksMenu = document.getElementById('navLinks');
+    if(menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinksMenu.classList.toggle('active');
+        });
+    }
+    
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.2 });
+    revealElements.forEach(el => observer.observe(el));
+    
+    // Close menu on resize
+    window.addEventListener('resize', () => {
+        if(window.innerWidth > 768 && navLinksMenu.classList.contains('active')) {
+            navLinksMenu.classList.remove('active');
+        }
+    });
+</script>
+
 <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
@@ -134,4 +408,4 @@
     })();
 </script>
 </body>
-  </html>
+</html>
